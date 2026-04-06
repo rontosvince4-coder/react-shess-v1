@@ -1,121 +1,63 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
+
 import './App.css'
+// Import local background image
+import backgroundImage from './assets/photographybg.jpg'
 
 function App() {
-  const [count, setCount] = useState(0)
+	const handleHireUs = () => {
+		alert('Thank you for your interest! Please email us at: hello@pitikshess.com');
+	};
 
-  return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
+	const handleExplore = () => {
+		console.log('Explore services clicked');
+		// You can add scroll to services section or navigate
+	};
 
-      <div className="ticks"></div>
+	return (
+		<div className="pitikshess">
+		<header className="pitikshess-header">
+			<div className="pitikshess-brand">
+			<h1 className="pitikshess-logo">
+				Pitik<span className="pitikshess-gold">Shess</span>
+			</h1>
+			<p className="pitikshess-brand-tag">photography + technology</p>
+			</div>
+			<nav className="pitikshess-nav">
+			<a href="#work" className="pitikshess-nav-link">Work</a>
+			<a href="#services" className="pitikshess-nav-link">Services</a>
+			<a href="#connect" className="pitikshess-nav-link">Connect</a>
+			</nav>
+		</header>
 
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
-  )
+		<main 
+			className="pitikshess-main"
+			style={{
+			backgroundImage: `linear-gradient(135deg, rgba(10, 10, 10, 0.85), rgba(10, 10, 10, 0.75)), url(${backgroundImage})`
+			}}
+		>
+			<div className="pitikshess-container">
+			<span className="pitikshess-badge">Side Hustle Studio</span>
+			<h2 className="pitikshess-title">
+				Visionary Photography
+				<br />
+				<span className="pitikshess-gold">Modern Tech Solutions</span>
+			</h2>
+			<p className="pitikshess-description">
+				Professional photography and technology services for creators, 
+				entrepreneurs, and dreamers ready to elevate their side hustles.
+			</p>
+			<div className="pitikshess-buttons">
+				<button className="pitikshess-btn-primary" onClick={handleHireUs}>
+				Hire Us
+				</button>
+				<button className="pitikshess-btn-secondary" onClick={handleExplore}>
+				Explore <span className="pitikshess-arrow">→</span>
+				</button>
+			</div>
+			</div>
+		</main>
+		</div>
+	)
 }
 
 export default App
